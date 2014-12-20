@@ -1,0 +1,37 @@
+list
+map
+set
+
+ArrayList - insertion order list
+Vector
+LinkedList
+
+HashSet - no dup
+TreeSet  - ordered 
+LinkedHashSet
+ 
+HashMap  - not sync,allow one null
+TreeMap
+LinkedHaspMap
+
+HashTable - Sync,will not allow null
+
+
+Iterator - remove
+ListItrator - set,previous,next
+Enumarator
+
+Comparator
+
+equals
+hashcode
+
+IdentityHashMap - user == where us HaspMap uses equals.
+
+CuncurrencyMap
+
+Collection - 
+
+
+
+
