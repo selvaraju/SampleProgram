@@ -1,0 +1,81 @@
+WSDL 1.1			WSDL 2.0
+<definitions>		<description>
+<portType>			<interface>
+<port>				<endpoint>
+<message>			<message> is removed and defined inside <operation>
+
+
+<wsdl:definitions name="HelloWorldImplService" targetNamespace="http://service.sample.com/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:tns="http://service.sample.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+<wsdl:types>
+	<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.sample.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.sample.com/">
+		<xs:element name="getCustomer" type="tns:getCustomer"/>
+		<xs:element name="getCustomerResponse" type="tns:getCustomerResponse"/>
+
+		<xs:complexType name="getCustomer">
+			<xs:sequence>
+				<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:complexType name="getCustomerResponse">
+			<xs:sequence>
+				<xs:element minOccurs="0" name="return" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+ 
+		<xs:element name="CustomGenericException" type="tns:CustomGenericException"/>
+		<xs:complexType name="CustomGenericException">
+			<xs:sequence>
+				<xs:element minOccurs="0" name="errMsg" type="xs:string"/>
+				<xs:element minOccurs="0" name="errCode" type="xs:string"/>
+				<xs:element minOccurs="0" name="message" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+		</xs:schema>
+</wsdl:types>
+ 
+<wsdl:message name="CustomGenericException">
+<wsdl:part element="tns:CustomGenericException" name="CustomGenericException"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCustomerResponse">
+<wsdl:part element="tns:getCustomerResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="getCustomer">
+<wsdl:part element="tns:getCustomer" name="parameters"></wsdl:part>
+ 
+<wsdl:portType name="HelloWorld">
+	<wsdl:operation name="getCustomer">
+		<wsdl:input message="tns:getCustomer" name="getCustomer"></wsdl:input>
+		<wsdl:output message="tns:getCustomerResponse" name="getCustomerResponse"></wsdl:output>
+		<wsdl:fault message="tns:CustomGenericException" name="CustomGenericException"></wsdl:fault>
+	</wsdl:operation>
+ 
+</wsdl:portType>
+
+<wsdl:binding name="HelloWorldImplServiceSoapBinding" type="tns:HelloWorld">
+	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+	<wsdl:operation name="getCustomer">
+	<soap:operation soapAction="" style="document"/>
+		<wsdl:input name="getCustomer">
+				<soap:body use="literal"/>
+		</wsdl:input>
+		<wsdl:output name="getCustomerResponse">
+				<soap:body use="literal"/>
+		</wsdl:output>
+		<wsdl:fault name="CustomGenericException">
+			<soap:fault name="CustomGenericException" use="literal"/>
+		</wsdl:fault>
+	</wsdl:operation>
+  
+</wsdl:binding>
+<wsdl:service name="HelloWorldImplService">
+	<wsdl:port binding="tns:HelloWorldImplServiceSoapBinding" name="HelloWorldImplPort">
+	<soap:address location="http://localhost:8080/springmvc/services/HelloWorld"/>
+	</wsdl:port>
+</wsdl:service>
+
+</wsdl:definitions>
+
+
