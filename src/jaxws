@@ -1,8 +1,9 @@
 WSDL 1.1			WSDL 2.0
 <definitions>		<description>
+<message>			<message> is removed and defined inside <operation>
 <portType>			<interface>
 <port>				<endpoint>
-<message>			<message> is removed and defined inside <operation>
+
 
 
 <wsdl:definitions name="HelloWorldImplService" targetNamespace="http://service.sample.com/" 

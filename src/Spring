@@ -1,0 +1,48 @@
+Core :
+------
+DI : Objects give their dependencies instead of creating or looking for dependent objects -IOC
+AOP : Separates application business logic from system services/ Cross cutting fuctionality - Loggin,Transaction,Security,catching etc...
+Container: Spring contains and manages the life cycle and configuration of application objects.
+MVC Framework: Spring’s web framework is a well-designed web MVC framework, which provides a great alternative to web frameworks.
+Transaction Management: Spring provides a consistent transaction management interface that can scale down to a local transaction and scale up to global transactions (JTA).
+Exception Handling: Spring provides a convenient API to translate technology-specific exceptions (thrown by JDBC, Hibernate, or JDO) into consistent, unchecked exceptions.
+
+BeanFactory (heart)- Spring framework was built on the top of this module, which makes the Spring container.
+A BeanFactory is an implementation of the factory pattern that applies 
+Inversion of Control to separate the application’s configuration and dependencies from the actual application code.
+
+
+DI : Control to separate the application’s configuration and dependencies from the actual application code.
+Constructor-based dependency injection
+Setter-based dependency injection
+The best solution is using constructor arguments for mandatory dependencies and setters for optional dependencies.
+
+AOP :
+The cross-cutting concern is a concern which is applicable throughout the application and it affects the entire application. 
+For example, logging, security and data transfer are the concerns which are needed in almost every module of an application, hence they are cross-cutting concerns.
+
+Join point : The join point represents a point in an application where we can plug-in an AOP aspect.
+Advice : The advice is the actual action that will be taken either before or after the method execution - before,after,around,after-returing,after throwing.
+Pointcut : The pointcut is a set of one or more joinpoints where an advice should be executed
+Weaving : Weaving is the process of linking aspects with other application types or objects to create an advised object.
+Weaving can be done at compile time, at load time, or at runtime.
+
+
+MVC :
+
+Dispatch Servlet
+
+@Controller
+@RequestMapping
+@ModelAttribute
+@valid
+@ExceptionHandler
+
+BindingResult
+Locale
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+Presentation :
+-------------
+Intercepting Filter
+FilterController
+Application Controller
+View Helper - separate a view from its processing logic - template-based views, such as JSP.
+Composite View - ou want common subviews, such as headers, footers and tables reused in multiple views,
+
+
+Business:
+---------
+Business Delegate -  hide clients from the complexity of remote communication with business service components
+Service Locator - transparently locate business components and services in a uniform manner
+Session Facade - encapsulate business-tier components and expose a coarse-grained service to remote clients.
+Application Service - centralize and aggregate behavior to provide a uniform service layer.
+Transfer Object
+
+
+Integration:
+-----------
+DAO
+
